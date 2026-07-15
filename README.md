@@ -23,39 +23,34 @@ bundled inside the app at build time — nothing is downloaded at runtime.
    The APK will be at `build/app/outputs/flutter-apk/app-release.apk` —
    this can be side-loaded onto any Android phone without the Play Store.
 
-## Adding new signs (no coding required)
+## Adding new signs
 
-All dictionary content lives in **`assets/data/words.json`**. To add a sign:
+All dictionary content lives in **`assets/data/words.json`**, but you don't
+need to hand-edit it. Instead:
 
 1. Add your image(s) to `assets/images/<category_folder>/`.
-   - Use lowercase, underscore-separated file names, e.g. `thank_you_1.jpg`.
+   - Use lowercase, underscore-separated file names matching the word,
+     e.g. `thank_you.jpg`.
    - Recommended: 3:4 or 4:3 aspect ratio photos, good lighting, plain background.
-   - You can add 1 image, or several (a "step sequence" showing the motion),
-     or a single short looping video later (video support is stubbed in the
-     data model via the `"video"` field but not yet wired into the UI).
-2. Add an entry to the `"entries"` array in `words.json`:
-   ```json
-   {
-     "id": "thank_you",
-     "word": "Thank you",
-     "category": "Greetings",
-     "description": "Flat hand starts at the chin, moves forward and down towards the person you are thanking.",
-     "images": [
-       "assets/images/greetings/thank_you_1.jpg"
-     ],
-     "video": null,
-     "sentences": [
-       "Thank you very much."
-     ]
-   }
+   - For a multi-step sign, number the images: `thank_you_1.jpg`,
+     `thank_you_2.jpg`, `thank_you_3.jpg` — they'll show in that order as a
+     swipeable sequence. A single un-numbered image (`smile.jpg`) is also fine.
+2. Run the sync script from the project root:
    ```
-3. Re-run `flutter pub get` if you added a brand-new category folder that
-   isn't already listed under `flutter: assets:` in `pubspec.yaml`
-   (all 23 planned categories are pre-registered there already, so this is
-   usually not needed).
+   dart run tool/sync_dictionary.dart
+   ```
+   This scans every category folder and creates or updates the matching
+   entry in `words.json` automatically — grouping numbered images into a
+   step sequence, and deriving the word's display name from the file name.
+   It never deletes anything, and never overwrites a description or example
+   sentences you've already written by hand.
+3. The script prints which entries still need a description and example
+   sentence(s) — open `words.json` and fill those two fields in for each
+   one it lists (`"description"` and `"sentences"`).
 
-The `"category"` value must exactly match one of the strings in the
-`"categories"` list at the top of `words.json`.
+The category folder name must be one of the ones already in
+`tool/sync_dictionary.dart`'s `categoryByFolder` map (all 23 planned
+categories are already there).
 
 ## Categories (stage 1)
 
