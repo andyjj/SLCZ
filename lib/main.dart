@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'data/dictionary_repository.dart';
+import 'data/favorites_repository.dart';
 import 'screens/welcome_screen.dart';
 
 void main() {
@@ -11,9 +12,10 @@ class ZambiaSignHubApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Single shared repository instance, loaded once and reused
+    // Single shared repository instances, loaded once and reused
     // across every screen in the app.
     final repository = DictionaryRepository();
+    final favoritesRepository = FavoritesRepository()..load();
 
     const navy = Color(0xFF1E3A5C);
 
@@ -53,7 +55,10 @@ class ZambiaSignHubApp extends StatelessWidget {
           ),
         ),
       ),
-      home: WelcomeScreen(repository: repository),
+      home: WelcomeScreen(
+        repository: repository,
+        favoritesRepository: favoritesRepository,
+      ),
     );
   }
 }

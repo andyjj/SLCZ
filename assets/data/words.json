@@ -39,6 +39,1458 @@
       "sentences": [
         "Hello how are you?"
       ]
+    },
+    {
+      "id": "family_placeholder_five",
+      "word": "Family placeholder five",
+      "category": "Family",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/family/family_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "family_placeholder_four",
+      "word": "Family placeholder four",
+      "category": "Family",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/family/family_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "family_placeholder_one",
+      "word": "Family placeholder one",
+      "category": "Family",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/family/family_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "family_placeholder_six",
+      "word": "Family placeholder six",
+      "category": "Family",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/family/family_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "family_placeholder_three",
+      "word": "Family placeholder three",
+      "category": "Family",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/family/family_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "family_placeholder_two",
+      "word": "Family placeholder two",
+      "category": "Family",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/family/family_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "question_words_placeholder_five",
+      "word": "Question words placeholder five",
+      "category": "Question Words",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/question_words/question_words_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "question_words_placeholder_four",
+      "word": "Question words placeholder four",
+      "category": "Question Words",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/question_words/question_words_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "question_words_placeholder_one",
+      "word": "Question words placeholder one",
+      "category": "Question Words",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/question_words/question_words_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "question_words_placeholder_six",
+      "word": "Question words placeholder six",
+      "category": "Question Words",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/question_words/question_words_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "question_words_placeholder_three",
+      "word": "Question words placeholder three",
+      "category": "Question Words",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/question_words/question_words_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "question_words_placeholder_two",
+      "word": "Question words placeholder two",
+      "category": "Question Words",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/question_words/question_words_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "food_placeholder_five",
+      "word": "Food placeholder five",
+      "category": "Food",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/food/food_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "food_placeholder_four",
+      "word": "Food placeholder four",
+      "category": "Food",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/food/food_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "food_placeholder_one",
+      "word": "Food placeholder one",
+      "category": "Food",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/food/food_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "food_placeholder_six",
+      "word": "Food placeholder six",
+      "category": "Food",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/food/food_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "food_placeholder_three",
+      "word": "Food placeholder three",
+      "category": "Food",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/food/food_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "food_placeholder_two",
+      "word": "Food placeholder two",
+      "category": "Food",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/food/food_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "cooking_placeholder_five",
+      "word": "Cooking placeholder five",
+      "category": "Cooking",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/cooking/cooking_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "cooking_placeholder_four",
+      "word": "Cooking placeholder four",
+      "category": "Cooking",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/cooking/cooking_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "cooking_placeholder_one",
+      "word": "Cooking placeholder one",
+      "category": "Cooking",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/cooking/cooking_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "cooking_placeholder_six",
+      "word": "Cooking placeholder six",
+      "category": "Cooking",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/cooking/cooking_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "cooking_placeholder_three",
+      "word": "Cooking placeholder three",
+      "category": "Cooking",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/cooking/cooking_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "cooking_placeholder_two",
+      "word": "Cooking placeholder two",
+      "category": "Cooking",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/cooking/cooking_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "work_placeholder_five",
+      "word": "Work placeholder five",
+      "category": "Work",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/work/work_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "work_placeholder_four",
+      "word": "Work placeholder four",
+      "category": "Work",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/work/work_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "work_placeholder_one",
+      "word": "Work placeholder one",
+      "category": "Work",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/work/work_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "work_placeholder_six",
+      "word": "Work placeholder six",
+      "category": "Work",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/work/work_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "work_placeholder_three",
+      "word": "Work placeholder three",
+      "category": "Work",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/work/work_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "work_placeholder_two",
+      "word": "Work placeholder two",
+      "category": "Work",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/work/work_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "months_placeholder_five",
+      "word": "Months placeholder five",
+      "category": "Months",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/months/months_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "months_placeholder_four",
+      "word": "Months placeholder four",
+      "category": "Months",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/months/months_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "months_placeholder_one",
+      "word": "Months placeholder one",
+      "category": "Months",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/months/months_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "months_placeholder_six",
+      "word": "Months placeholder six",
+      "category": "Months",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/months/months_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "months_placeholder_three",
+      "word": "Months placeholder three",
+      "category": "Months",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/months/months_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "months_placeholder_two",
+      "word": "Months placeholder two",
+      "category": "Months",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/months/months_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "days_and_time_placeholder_five",
+      "word": "Days and time placeholder five",
+      "category": "Days and Time",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/days_and_time/days_and_time_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "days_and_time_placeholder_four",
+      "word": "Days and time placeholder four",
+      "category": "Days and Time",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/days_and_time/days_and_time_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "days_and_time_placeholder_one",
+      "word": "Days and time placeholder one",
+      "category": "Days and Time",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/days_and_time/days_and_time_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "days_and_time_placeholder_six",
+      "word": "Days and time placeholder six",
+      "category": "Days and Time",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/days_and_time/days_and_time_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "days_and_time_placeholder_three",
+      "word": "Days and time placeholder three",
+      "category": "Days and Time",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/days_and_time/days_and_time_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "days_and_time_placeholder_two",
+      "word": "Days and time placeholder two",
+      "category": "Days and Time",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/days_and_time/days_and_time_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "numbers_placeholder_five",
+      "word": "Numbers placeholder five",
+      "category": "Numbers",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/numbers/numbers_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "numbers_placeholder_four",
+      "word": "Numbers placeholder four",
+      "category": "Numbers",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/numbers/numbers_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "numbers_placeholder_one",
+      "word": "Numbers placeholder one",
+      "category": "Numbers",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/numbers/numbers_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "numbers_placeholder_six",
+      "word": "Numbers placeholder six",
+      "category": "Numbers",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/numbers/numbers_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "numbers_placeholder_three",
+      "word": "Numbers placeholder three",
+      "category": "Numbers",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/numbers/numbers_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "numbers_placeholder_two",
+      "word": "Numbers placeholder two",
+      "category": "Numbers",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/numbers/numbers_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "house_placeholder_five",
+      "word": "House placeholder five",
+      "category": "House",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/house/house_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "house_placeholder_four",
+      "word": "House placeholder four",
+      "category": "House",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/house/house_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "house_placeholder_one",
+      "word": "House placeholder one",
+      "category": "House",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/house/house_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "house_placeholder_six",
+      "word": "House placeholder six",
+      "category": "House",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/house/house_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "house_placeholder_three",
+      "word": "House placeholder three",
+      "category": "House",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/house/house_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "house_placeholder_two",
+      "word": "House placeholder two",
+      "category": "House",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/house/house_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "making_plans_placeholder_five",
+      "word": "Making plans placeholder five",
+      "category": "Making Plans",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/making_plans/making_plans_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "making_plans_placeholder_four",
+      "word": "Making plans placeholder four",
+      "category": "Making Plans",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/making_plans/making_plans_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "making_plans_placeholder_one",
+      "word": "Making plans placeholder one",
+      "category": "Making Plans",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/making_plans/making_plans_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "making_plans_placeholder_six",
+      "word": "Making plans placeholder six",
+      "category": "Making Plans",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/making_plans/making_plans_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "making_plans_placeholder_three",
+      "word": "Making plans placeholder three",
+      "category": "Making Plans",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/making_plans/making_plans_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "making_plans_placeholder_two",
+      "word": "Making plans placeholder two",
+      "category": "Making Plans",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/making_plans/making_plans_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "weather_placeholder_five",
+      "word": "Weather placeholder five",
+      "category": "Weather",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/weather/weather_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "weather_placeholder_four",
+      "word": "Weather placeholder four",
+      "category": "Weather",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/weather/weather_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "weather_placeholder_one",
+      "word": "Weather placeholder one",
+      "category": "Weather",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/weather/weather_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "weather_placeholder_six",
+      "word": "Weather placeholder six",
+      "category": "Weather",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/weather/weather_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "weather_placeholder_three",
+      "word": "Weather placeholder three",
+      "category": "Weather",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/weather/weather_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "weather_placeholder_two",
+      "word": "Weather placeholder two",
+      "category": "Weather",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/weather/weather_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "health_and_wellbeing_placeholder_five",
+      "word": "Health and wellbeing placeholder five",
+      "category": "Health and Well-being",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/health_and_wellbeing/health_and_wellbeing_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "health_and_wellbeing_placeholder_four",
+      "word": "Health and wellbeing placeholder four",
+      "category": "Health and Well-being",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/health_and_wellbeing/health_and_wellbeing_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "health_and_wellbeing_placeholder_one",
+      "word": "Health and wellbeing placeholder one",
+      "category": "Health and Well-being",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/health_and_wellbeing/health_and_wellbeing_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "health_and_wellbeing_placeholder_six",
+      "word": "Health and wellbeing placeholder six",
+      "category": "Health and Well-being",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/health_and_wellbeing/health_and_wellbeing_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "health_and_wellbeing_placeholder_three",
+      "word": "Health and wellbeing placeholder three",
+      "category": "Health and Well-being",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/health_and_wellbeing/health_and_wellbeing_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "health_and_wellbeing_placeholder_two",
+      "word": "Health and wellbeing placeholder two",
+      "category": "Health and Well-being",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/health_and_wellbeing/health_and_wellbeing_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "feeling_placeholder_five",
+      "word": "Feeling placeholder five",
+      "category": "Feeling",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/feeling/feeling_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "feeling_placeholder_four",
+      "word": "Feeling placeholder four",
+      "category": "Feeling",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/feeling/feeling_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "feeling_placeholder_one",
+      "word": "Feeling placeholder one",
+      "category": "Feeling",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/feeling/feeling_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "feeling_placeholder_six",
+      "word": "Feeling placeholder six",
+      "category": "Feeling",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/feeling/feeling_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "feeling_placeholder_three",
+      "word": "Feeling placeholder three",
+      "category": "Feeling",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/feeling/feeling_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "feeling_placeholder_two",
+      "word": "Feeling placeholder two",
+      "category": "Feeling",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/feeling/feeling_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "adjectives_placeholder_five",
+      "word": "Adjectives placeholder five",
+      "category": "Adjectives",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/adjectives/adjectives_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "adjectives_placeholder_four",
+      "word": "Adjectives placeholder four",
+      "category": "Adjectives",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/adjectives/adjectives_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "adjectives_placeholder_one",
+      "word": "Adjectives placeholder one",
+      "category": "Adjectives",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/adjectives/adjectives_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "adjectives_placeholder_six",
+      "word": "Adjectives placeholder six",
+      "category": "Adjectives",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/adjectives/adjectives_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "adjectives_placeholder_three",
+      "word": "Adjectives placeholder three",
+      "category": "Adjectives",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/adjectives/adjectives_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "adjectives_placeholder_two",
+      "word": "Adjectives placeholder two",
+      "category": "Adjectives",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/adjectives/adjectives_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "bible_placeholder_five",
+      "word": "Bible placeholder five",
+      "category": "Bible",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/bible/bible_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "bible_placeholder_four",
+      "word": "Bible placeholder four",
+      "category": "Bible",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/bible/bible_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "bible_placeholder_one",
+      "word": "Bible placeholder one",
+      "category": "Bible",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/bible/bible_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "bible_placeholder_six",
+      "word": "Bible placeholder six",
+      "category": "Bible",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/bible/bible_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "bible_placeholder_three",
+      "word": "Bible placeholder three",
+      "category": "Bible",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/bible/bible_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "bible_placeholder_two",
+      "word": "Bible placeholder two",
+      "category": "Bible",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/bible/bible_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "school_placeholder_five",
+      "word": "School placeholder five",
+      "category": "School",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/school/school_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "school_placeholder_four",
+      "word": "School placeholder four",
+      "category": "School",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/school/school_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "school_placeholder_one",
+      "word": "School placeholder one",
+      "category": "School",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/school/school_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "school_placeholder_six",
+      "word": "School placeholder six",
+      "category": "School",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/school/school_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "school_placeholder_three",
+      "word": "School placeholder three",
+      "category": "School",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/school/school_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "school_placeholder_two",
+      "word": "School placeholder two",
+      "category": "School",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/school/school_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "verbs_placeholder_five",
+      "word": "Verbs placeholder five",
+      "category": "Verbs",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/verbs/verbs_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "verbs_placeholder_four",
+      "word": "Verbs placeholder four",
+      "category": "Verbs",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/verbs/verbs_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "verbs_placeholder_one",
+      "word": "Verbs placeholder one",
+      "category": "Verbs",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/verbs/verbs_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "verbs_placeholder_six",
+      "word": "Verbs placeholder six",
+      "category": "Verbs",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/verbs/verbs_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "verbs_placeholder_three",
+      "word": "Verbs placeholder three",
+      "category": "Verbs",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/verbs/verbs_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "verbs_placeholder_two",
+      "word": "Verbs placeholder two",
+      "category": "Verbs",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/verbs/verbs_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "places_placeholder_five",
+      "word": "Places placeholder five",
+      "category": "Places",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/places/places_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "places_placeholder_four",
+      "word": "Places placeholder four",
+      "category": "Places",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/places/places_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "places_placeholder_one",
+      "word": "Places placeholder one",
+      "category": "Places",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/places/places_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "places_placeholder_six",
+      "word": "Places placeholder six",
+      "category": "Places",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/places/places_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "places_placeholder_three",
+      "word": "Places placeholder three",
+      "category": "Places",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/places/places_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "places_placeholder_two",
+      "word": "Places placeholder two",
+      "category": "Places",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/places/places_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "quantities_placeholder_five",
+      "word": "Quantities placeholder five",
+      "category": "Quantities",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/quantities/quantities_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "quantities_placeholder_four",
+      "word": "Quantities placeholder four",
+      "category": "Quantities",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/quantities/quantities_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "quantities_placeholder_one",
+      "word": "Quantities placeholder one",
+      "category": "Quantities",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/quantities/quantities_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "quantities_placeholder_six",
+      "word": "Quantities placeholder six",
+      "category": "Quantities",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/quantities/quantities_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "quantities_placeholder_three",
+      "word": "Quantities placeholder three",
+      "category": "Quantities",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/quantities/quantities_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "quantities_placeholder_two",
+      "word": "Quantities placeholder two",
+      "category": "Quantities",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/quantities/quantities_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "comparisons_placeholder_five",
+      "word": "Comparisons placeholder five",
+      "category": "Comparisons",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/comparisons/comparisons_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "comparisons_placeholder_four",
+      "word": "Comparisons placeholder four",
+      "category": "Comparisons",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/comparisons/comparisons_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "comparisons_placeholder_one",
+      "word": "Comparisons placeholder one",
+      "category": "Comparisons",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/comparisons/comparisons_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "comparisons_placeholder_six",
+      "word": "Comparisons placeholder six",
+      "category": "Comparisons",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/comparisons/comparisons_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "comparisons_placeholder_three",
+      "word": "Comparisons placeholder three",
+      "category": "Comparisons",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/comparisons/comparisons_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "comparisons_placeholder_two",
+      "word": "Comparisons placeholder two",
+      "category": "Comparisons",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/comparisons/comparisons_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "colours_placeholder_five",
+      "word": "Colours placeholder five",
+      "category": "Colours",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/colours/colours_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "colours_placeholder_four",
+      "word": "Colours placeholder four",
+      "category": "Colours",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/colours/colours_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "colours_placeholder_one",
+      "word": "Colours placeholder one",
+      "category": "Colours",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/colours/colours_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "colours_placeholder_six",
+      "word": "Colours placeholder six",
+      "category": "Colours",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/colours/colours_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "colours_placeholder_three",
+      "word": "Colours placeholder three",
+      "category": "Colours",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/colours/colours_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "colours_placeholder_two",
+      "word": "Colours placeholder two",
+      "category": "Colours",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/colours/colours_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "prepositions_placeholder_five",
+      "word": "Prepositions placeholder five",
+      "category": "Prepositions",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/prepositions/prepositions_placeholder_five.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "prepositions_placeholder_four",
+      "word": "Prepositions placeholder four",
+      "category": "Prepositions",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/prepositions/prepositions_placeholder_four.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "prepositions_placeholder_one",
+      "word": "Prepositions placeholder one",
+      "category": "Prepositions",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/prepositions/prepositions_placeholder_one.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "prepositions_placeholder_six",
+      "word": "Prepositions placeholder six",
+      "category": "Prepositions",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/prepositions/prepositions_placeholder_six.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "prepositions_placeholder_three",
+      "word": "Prepositions placeholder three",
+      "category": "Prepositions",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/prepositions/prepositions_placeholder_three.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "prepositions_placeholder_two",
+      "word": "Prepositions placeholder two",
+      "category": "Prepositions",
+      "description": "Temporary placeholder image — replace with a real sign photo and description.",
+      "images": [
+        "assets/images/prepositions/prepositions_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
     }
   ]
 }

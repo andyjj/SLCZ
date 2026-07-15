@@ -1,17 +1,38 @@
 import 'package:flutter/material.dart';
+import '../data/favorites_repository.dart';
 import '../models/dictionary_entry.dart';
 
 class EntryDetailScreen extends StatelessWidget {
   final DictionaryEntry entry;
+  final FavoritesRepository favoritesRepository;
 
-  const EntryDetailScreen({super.key, required this.entry});
+  const EntryDetailScreen({
+    super.key,
+    required this.entry,
+    required this.favoritesRepository,
+  });
 
   @override
   Widget build(BuildContext context) {
     final navy = Theme.of(context).colorScheme.primary;
 
     return Scaffold(
-      appBar: AppBar(title: Text(entry.category)),
+      appBar: AppBar(
+        title: Text(entry.category),
+        actions: [
+          ListenableBuilder(
+            listenable: favoritesRepository,
+            builder: (context, _) {
+              final isFavorite = favoritesRepository.isFavorite(entry.id);
+              return IconButton(
+                icon: Icon(isFavorite ? Icons.star_rounded : Icons.star_border_rounded),
+                tooltip: isFavorite ? 'Remove from My Learning List' : 'Add to My Learning List',
+                onPressed: () => favoritesRepository.toggle(entry.id),
+              );
+            },
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [

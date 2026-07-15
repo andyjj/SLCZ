@@ -63,6 +63,13 @@ void main() {
   var updated = 0;
   final unknownFolders = <String>[];
 
+  // First pass: group image files per folder by sign id (stripping a
+  // trailing _<number> step suffix, e.g. thank_you_1.jpg -> thank_you).
+  // Recorded per-folder so we can detect the same base id appearing in more
+  // than one category folder before deciding on final ids.
+  final groupsByFolder = <String, Map<String, List<MapEntry<int, File>>>>{};
+  final folderCategory = <String, String>{};
+
   for (final folder in imagesRoot.listSync().whereType<Directory>()) {
     final folderName = folder.uri.pathSegments.where((s) => s.isNotEmpty).last;
     final category = categoryByFolder[folderName];
@@ -70,9 +77,8 @@ void main() {
       unknownFolders.add(folderName);
       continue;
     }
+    folderCategory[folderName] = category;
 
-    // Group image files in this folder by their sign id (strips a
-    // trailing _<number> step suffix, e.g. thank_you_1.jpg -> thank_you).
     final groups = <String, List<MapEntry<int, File>>>{};
     for (final file in folder.listSync().whereType<File>()) {
       final name = file.uri.pathSegments.last;
@@ -83,16 +89,38 @@ void main() {
 
       final base = name.substring(0, dot);
       final match = RegExp(r'^(.*)_(\d+)$').firstMatch(base);
-      final id = match != null ? match.group(1)! : base;
+      final baseId = match != null ? match.group(1)! : base;
       final step = match != null ? int.parse(match.group(2)!) : 0;
 
-      groups.putIfAbsent(id, () => []).add(MapEntry(step, file));
+      groups.putIfAbsent(baseId, () => []).add(MapEntry(step, file));
     }
+    groupsByFolder[folderName] = groups;
+  }
 
-    for (final entry in groups.entries) {
-      final id = entry.key;
-      final images = entry.value
-        ..sort((a, b) => a.key.compareTo(b.key));
+  // A base id that shows up in more than one category folder would silently
+  // collide (and overwrite each other) if used as-is, since ids must be
+  // unique across the whole dictionary. Prefix with the folder name only
+  // for ids that actually collide, so unambiguous ids (the common case)
+  // stay short and human-friendly.
+  final baseIdFolderCount = <String, int>{};
+  for (final groups in groupsByFolder.values) {
+    for (final baseId in groups.keys) {
+      baseIdFolderCount[baseId] = (baseIdFolderCount[baseId] ?? 0) + 1;
+    }
+  }
+  final disambiguated = <String>[];
+
+  for (final folderEntry in groupsByFolder.entries) {
+    final folderName = folderEntry.key;
+    final category = folderCategory[folderName]!;
+
+    for (final group in folderEntry.value.entries) {
+      final baseId = group.key;
+      final collides = baseIdFolderCount[baseId]! > 1;
+      final id = collides ? '${folderName}_$baseId' : baseId;
+      if (collides) disambiguated.add('$folderName/$baseId -> $id');
+
+      final images = group.value..sort((a, b) => a.key.compareTo(b.key));
       final imagePaths = images
           .map((e) => 'assets/images/$folderName/${e.value.uri.pathSegments.last}')
           .toList();
@@ -103,7 +131,7 @@ void main() {
         existing['images'] = imagePaths;
         updated++;
       } else {
-        final word = id
+        final word = baseId
             .replaceAll('_', ' ')
             .replaceFirstMapped(RegExp('^.'), (m) => m.group(0)!.toUpperCase());
         entriesById[id] = {
@@ -134,6 +162,10 @@ void main() {
   wordsFile.writeAsStringSync('${encoder.convert(json)}\n');
 
   stdout.writeln('Sync complete: $created new entries, $updated updated.');
+  if (disambiguated.isNotEmpty) {
+    stdout.writeln(
+        'Note: these ids collided across categories and were auto-prefixed with their folder name:\n  ${disambiguated.join('\n  ')}');
+  }
   if (unknownFolders.isNotEmpty) {
     stdout.writeln(
         'Skipped folders not in a known category (check categoryByFolder in this script): ${unknownFolders.join(', ')}');

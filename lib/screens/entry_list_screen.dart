@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import '../data/dictionary_repository.dart';
+import '../data/favorites_repository.dart';
 import 'entry_detail_screen.dart';
 
 class EntryListScreen extends StatelessWidget {
   final DictionaryRepository repository;
+  final FavoritesRepository favoritesRepository;
   final String category;
 
   const EntryListScreen({
     super.key,
     required this.repository,
+    required this.favoritesRepository,
     required this.category,
   });
 
@@ -55,7 +58,7 @@ class EntryListScreen extends StatelessWidget {
                             ),
                           )
                         : CircleAvatar(
-                            backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                            backgroundColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                             child: Icon(Icons.front_hand_rounded,
                                 color: Theme.of(context).colorScheme.primary),
                           ),
@@ -63,11 +66,32 @@ class EntryListScreen extends StatelessWidget {
                       entry.word,
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
-                    trailing: const Icon(Icons.chevron_right),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListenableBuilder(
+                          listenable: favoritesRepository,
+                          builder: (context, _) {
+                            final isFavorite = favoritesRepository.isFavorite(entry.id);
+                            return IconButton(
+                              icon: Icon(
+                                isFavorite ? Icons.star_rounded : Icons.star_border_rounded,
+                                color: isFavorite ? Colors.amber.shade700 : Colors.grey.shade400,
+                              ),
+                              onPressed: () => favoritesRepository.toggle(entry.id),
+                            );
+                          },
+                        ),
+                        const Icon(Icons.chevron_right),
+                      ],
+                    ),
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (_) => EntryDetailScreen(entry: entry),
+                          builder: (_) => EntryDetailScreen(
+                            entry: entry,
+                            favoritesRepository: favoritesRepository,
+                          ),
                         ),
                       );
                     },

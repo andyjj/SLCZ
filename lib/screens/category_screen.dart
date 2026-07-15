@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../data/dictionary_repository.dart';
+import '../data/favorites_repository.dart';
+import '../widgets/ad_banner_placeholder.dart';
 import 'entry_list_screen.dart';
 import 'entry_detail_screen.dart';
 
@@ -33,8 +35,13 @@ const Map<String, IconData> _categoryIcons = {
 
 class CategoryScreen extends StatefulWidget {
   final DictionaryRepository repository;
+  final FavoritesRepository favoritesRepository;
 
-  const CategoryScreen({super.key, required this.repository});
+  const CategoryScreen({
+    super.key,
+    required this.repository,
+    required this.favoritesRepository,
+  });
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -81,6 +88,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
             ),
           ),
+          if (!isSearching) const AdBannerPlaceholder(),
           Expanded(
             child: isSearching
                 ? _buildSearchResults()
@@ -106,7 +114,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => EntryDetailScreen(entry: entry),
+                builder: (_) => EntryDetailScreen(
+                  entry: entry,
+                  favoritesRepository: widget.favoritesRepository,
+                ),
               ),
             );
           },
@@ -138,6 +149,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               MaterialPageRoute(
                 builder: (_) => EntryListScreen(
                   repository: widget.repository,
+                  favoritesRepository: widget.favoritesRepository,
                   category: category,
                 ),
               ),
