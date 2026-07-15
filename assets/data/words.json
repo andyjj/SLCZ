@@ -1,0 +1,44 @@
+{
+  "categories": [
+    "Greetings",
+    "Family",
+    "Question Words",
+    "Food",
+    "Cooking",
+    "Work",
+    "Months",
+    "Days and Time",
+    "Numbers",
+    "House",
+    "Making Plans",
+    "Weather",
+    "Health and Well-being",
+    "Feeling",
+    "Adjectives",
+    "Bible",
+    "School",
+    "Verbs",
+    "Places",
+    "Quantities",
+    "Comparisons",
+    "Colours",
+    "Prepositions"
+  ],
+  "entries": [
+    {
+      "id": "how_are_you",
+      "word": "How are you",
+      "category": "Greetings",
+      "description": "Flat palms facing down, ends of the LH fingers on top the RH fingers. Rotate upwards using the wrist, and end with RH index finger pointing towards the person you are speaking to.",
+      "images": [
+        "assets/images/greetings/how_are_you_1.jpg",
+        "assets/images/greetings/how_are_you_2.jpg",
+        "assets/images/greetings/how_are_you_3.jpg"
+      ],
+      "video": null,
+      "sentences": [
+        "Hello how are you?"
+      ]
+    }
+  ]
+}

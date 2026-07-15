@@ -1,0 +1,46 @@
+name: zambia_sign_hub
+description: "Offline sign language dictionary for Zambia — Signs Made Simple."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/words.json
+    - assets/images/greetings/
+    - assets/images/family/
+    - assets/images/question_words/
+    - assets/images/food/
+    - assets/images/cooking/
+    - assets/images/work/
+    - assets/images/months/
+    - assets/images/days_and_time/
+    - assets/images/numbers/
+    - assets/images/house/
+    - assets/images/making_plans/
+    - assets/images/weather/
+    - assets/images/health_and_wellbeing/
+    - assets/images/feeling/
+    - assets/images/adjectives/
+    - assets/images/bible/
+    - assets/images/school/
+    - assets/images/verbs/
+    - assets/images/places/
+    - assets/images/quantities/
+    - assets/images/comparisons/
+    - assets/images/colours/
+    - assets/images/prepositions/
