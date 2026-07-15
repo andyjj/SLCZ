@@ -18,7 +18,7 @@ class ZambiaSignHubApp extends StatelessWidget {
     const navy = Color(0xFF1E3A5C);
 
     return MaterialApp(
-      title: 'Zambia Sign Language Hub',
+      title: 'SLCZ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

@@ -17,30 +17,20 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(flex: 2),
-              // A simple hands/greeting icon stands in for branded artwork —
-              // swap in a real logo image later via assets/images/.
-              Container(
-                width: 140,
-                height: 140,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.front_hand_rounded,
-                  size: 72,
-                  color: Colors.white,
-                ),
+              Image.asset(
+                'assets/branding/logo.png',
+                width: 160,
+                height: 160,
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 24),
               Text(
-                'Zambia Sign\nLanguage Hub',
+                'SLCZ',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 32),
+                style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 36),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 8),
               Text(
-                'Signs Made Simple',
+                'Sign Language Channel of Zambia',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
