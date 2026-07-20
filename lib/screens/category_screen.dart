@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../data/auth_repository.dart';
 import '../data/dictionary_repository.dart';
 import '../data/favorites_repository.dart';
 import '../widgets/ad_banner_placeholder.dart';
@@ -36,11 +37,13 @@ const Map<String, IconData> _categoryIcons = {
 class CategoryScreen extends StatefulWidget {
   final DictionaryRepository repository;
   final FavoritesRepository favoritesRepository;
+  final AuthRepository authRepository;
 
   const CategoryScreen({
     super.key,
     required this.repository,
     required this.favoritesRepository,
+    required this.authRepository,
   });
 
   @override
@@ -88,7 +91,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
             ),
           ),
-          if (!isSearching) const AdBannerPlaceholder(),
+          if (!isSearching)
+            ListenableBuilder(
+              listenable: widget.authRepository,
+              builder: (context, _) => widget.authRepository.isSignedIn
+                  ? const SizedBox.shrink()
+                  : const AdBannerPlaceholder(),
+            ),
           Expanded(
             child: isSearching
                 ? _buildSearchResults()

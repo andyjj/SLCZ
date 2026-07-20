@@ -1,21 +1,37 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'data/auth_repository.dart';
 import 'data/dictionary_repository.dart';
 import 'data/favorites_repository.dart';
 import 'screens/welcome_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const ZambiaSignHubApp());
 }
 
 class ZambiaSignHubApp extends StatelessWidget {
-  const ZambiaSignHubApp({super.key});
+  // Injectable for tests, so they can pass fakes instead of touching the
+  // real Firebase SDK / platform channels. Production always uses defaults.
+  final DictionaryRepository? repositoryOverride;
+  final FavoritesRepository? favoritesRepositoryOverride;
+  final AuthRepository? authRepositoryOverride;
+
+  const ZambiaSignHubApp({
+    super.key,
+    this.repositoryOverride,
+    this.favoritesRepositoryOverride,
+    this.authRepositoryOverride,
+  });
 
   @override
   Widget build(BuildContext context) {
     // Single shared repository instances, loaded once and reused
     // across every screen in the app.
-    final repository = DictionaryRepository();
-    final favoritesRepository = FavoritesRepository()..load();
+    final repository = repositoryOverride ?? DictionaryRepository();
+    final favoritesRepository = favoritesRepositoryOverride ?? (FavoritesRepository()..load());
+    final authRepository = authRepositoryOverride ?? AuthRepository();
 
     const navy = Color(0xFF1E3A5C);
 
@@ -58,6 +74,7 @@ class ZambiaSignHubApp extends StatelessWidget {
       home: WelcomeScreen(
         repository: repository,
         favoritesRepository: favoritesRepository,
+        authRepository: authRepository,
       ),
     );
   }

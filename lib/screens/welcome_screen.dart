@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import '../data/auth_repository.dart';
 import '../data/dictionary_repository.dart';
 import '../data/favorites_repository.dart';
+import 'auth_screen.dart';
 import 'category_screen.dart';
 import 'favorites_screen.dart';
 import 'quiz_screen.dart';
@@ -8,30 +10,30 @@ import 'quiz_screen.dart';
 class WelcomeScreen extends StatelessWidget {
   final DictionaryRepository repository;
   final FavoritesRepository favoritesRepository;
+  final AuthRepository authRepository;
 
   const WelcomeScreen({
     super.key,
     required this.repository,
     required this.favoritesRepository,
+    required this.authRepository,
   });
 
-  void _showPremiumComingSoon(BuildContext context) {
-    showDialog(
+  Future<void> _confirmSignOut(BuildContext context) async {
+    final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('SLCZ Premium'),
-        content: const Text(
-          'An ad-free, registered version of SLCZ is coming soon. '
-          'Check back here to sign up once it\'s available.',
-        ),
+        title: const Text('Sign out'),
+        content: Text('Signed in as ${authRepository.email}. Ads will show again after signing out.'),
         actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('OK'),
-          ),
+          TextButton(onPressed: () => Navigator.of(context).pop(false), child: const Text('Cancel')),
+          TextButton(onPressed: () => Navigator.of(context).pop(true), child: const Text('Sign out')),
         ],
       ),
     );
+    if (confirmed == true) {
+      await authRepository.signOut();
+    }
   }
 
   @override
@@ -95,6 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                         builder: (_) => CategoryScreen(
                           repository: repository,
                           favoritesRepository: favoritesRepository,
+                          authRepository: authRepository,
                         ),
                       ),
                     );
@@ -137,10 +140,28 @@ class WelcomeScreen extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20),
-              TextButton.icon(
-                icon: const Icon(Icons.workspace_premium_outlined, size: 18),
-                label: const Text('Go ad-free — sign up'),
-                onPressed: () => _showPremiumComingSoon(context),
+              ListenableBuilder(
+                listenable: authRepository,
+                builder: (context, _) {
+                  if (authRepository.isSignedIn) {
+                    return TextButton.icon(
+                      icon: const Icon(Icons.workspace_premium_rounded, size: 18, color: Colors.amber),
+                      label: Text('Ad-free — signed in as ${authRepository.email}'),
+                      onPressed: () => _confirmSignOut(context),
+                    );
+                  }
+                  return TextButton.icon(
+                    icon: const Icon(Icons.workspace_premium_outlined, size: 18),
+                    label: const Text('Go ad-free — sign up'),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => AuthScreen(authRepository: authRepository),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
               const SizedBox(height: 24),
             ],
