@@ -1031,6 +1031,71 @@
       "sentences": []
     },
     {
+      "id": "bless",
+      "word": "Bless",
+      "category": "Bible",
+      "description": "Both hands in the \"a\" hand shape, thumbs touching the lips. As the hands move down, palms open up. Keep the palms facing downwards at a 45o angle. Wiggle the fingers as you make this movement.",
+      "images": [
+        "assets/images/bible/bless_1.png",
+        "assets/images/bible/bless_2.png"
+      ],
+      "video": null,
+      "sentences": [
+        "Give me and example of one of God's blessings. (God bless, example what?)"
+      ]
+    },
+    {
+      "id": "church",
+      "word": "Church",
+      "category": "Bible",
+      "description": "The \"c\" hand shape on the back of the hand. Taps up and down. \n\nThe home-sign for church is literally go-pray.\n\nThe movement can be small, just a few centimeters.",
+      "images": [
+        "assets/images/bible/church_1.png",
+        "assets/images/bible/church_2.png"
+      ],
+      "video": null,
+      "sentences": [
+        "Tomorrow will you go to Church? (Tomorrow you church go?)"
+      ]
+    },
+    {
+      "id": "church_homesign",
+      "word": "Church homesign",
+      "category": "Bible",
+      "description": "",
+      "images": [
+        "assets/images/bible/church_homesign_1.png",
+        "assets/images/bible/church_homesign_2.png",
+        "assets/images/bible/church_homesign_3.png"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "heaven",
+      "word": "Heaven",
+      "category": "Bible",
+      "description": "Fingertips on both hands facing each other, bent at 90o, and fingers in each hand touching. Move in one circle. One hand going up and away from the body, the other going down and towards the body. Once a single circle has been drawn, the two hands move away from each other. \n\nYou may also start the sign at point upwards toward the sky. Noting where heaven is.",
+      "images": [
+        "assets/images/bible/heaven_1.png",
+        "assets/images/bible/heaven_2.png"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "matthew",
+      "word": "Matthew",
+      "category": "Bible",
+      "description": "The \"m\" hand shape taps one side of the mouth, then the other side of the mouth\n\nIt does not matter what side of the face you tap first.",
+      "images": [
+        "assets/images/bible/matthew_1.png",
+        "assets/images/bible/matthew_2.png"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
       "id": "school_placeholder_five",
       "word": "School placeholder five",
       "category": "School",
@@ -1092,6 +1157,17 @@
       "description": "Temporary placeholder image — replace with a real sign photo and description.",
       "images": [
         "assets/images/school/school_placeholder_two.jpg"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "hope",
+      "word": "Hope",
+      "category": "Verbs",
+      "description": "",
+      "images": [
+        "assets/images/verbs/hope.png"
       ],
       "video": null,
       "sentences": []

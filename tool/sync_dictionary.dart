@@ -9,10 +9,25 @@
 //   thank_you_1.jpg, _2.jpg    -> a step sequence, shown in order
 //
 // Optionally, drop a thank_you_definition.txt file next to the images (same
-// folder) with an English description of how to perform the sign — its
-// contents become that entry's "description". If no such file exists, the
-// description is left blank for a human to fill in later (or untouched, if
-// one was already written by hand directly in words.json).
+// folder). It can either be plain free text (used as-is for the entry's
+// "description"), or use this template with recognized section headers on
+// their own line — anything before the first recognized header (e.g. a
+// title) is ignored:
+//
+//   Definition
+//   <a general definition of the word/concept - not currently used>
+//
+//   Sign Description
+//   <how to perform the sign - becomes the entry's "description">
+//
+//   Potential Sentences
+//   <one example sentence per line - becomes the entry's "sentences">
+//
+//   Notes
+//   <extra performance notes - appended to the description>
+//
+// If no such file exists, the description/sentences are left as they were
+// (blank for a new entry, untouched if already written by hand in words.json).
 //
 // Existing entries are updated (category + image list) but their word and
 // sentences are left untouched. New entries are created with an empty
@@ -59,6 +74,67 @@ const Map<String, String> categoryByFolder = {
 };
 
 const List<String> imageExtensions = ['.jpg', '.jpeg', '.png'];
+
+const List<String> knownDefinitionHeaders = [
+  'Definition',
+  'Sign Description',
+  'Potential Sentences',
+  'Notes',
+];
+
+class ParsedDefinition {
+  final String description;
+  final List<String> sentences;
+  ParsedDefinition(this.description, this.sentences);
+}
+
+/// Parses a *_definition.txt file. If it uses the "Sign Description" /
+/// "Potential Sentences" / "Notes" template, pulls description and
+/// sentences from the matching sections. Otherwise treats the whole
+/// (trimmed) file as a plain-text description with no sentences.
+ParsedDefinition? parseDefinitionFile(String rawText) {
+  final text = rawText.replaceAll('\r\n', '\n').trim();
+  if (text.isEmpty) return null;
+
+  final sections = <String, StringBuffer>{};
+  String? currentHeader;
+  var sawKnownHeader = false;
+
+  for (final rawLine in text.split('\n')) {
+    final line = rawLine.trim();
+    if (knownDefinitionHeaders.contains(line)) {
+      currentHeader = line;
+      sections[currentHeader] = StringBuffer();
+      sawKnownHeader = true;
+      continue;
+    }
+    if (currentHeader != null) {
+      sections[currentHeader]!.writeln(rawLine);
+    }
+  }
+
+  if (!sawKnownHeader) {
+    return ParsedDefinition(text, const []);
+  }
+
+  final signDescription = sections['Sign Description']?.toString().trim() ?? '';
+  final notes = sections['Notes']?.toString().trim() ?? '';
+  final definition = sections['Definition']?.toString().trim() ?? '';
+  // Fall back to the general definition if there's no sign-performance
+  // text at all, so the entry isn't left with nothing.
+  final description = [
+    if (signDescription.isNotEmpty) signDescription else definition,
+    notes,
+  ].where((s) => s.isNotEmpty).join('\n\n');
+
+  final sentences = (sections['Potential Sentences']?.toString() ?? '')
+      .split('\n')
+      .map((s) => s.trim())
+      .where((s) => s.isNotEmpty)
+      .toList();
+
+  return ParsedDefinition(description, sentences);
+}
 
 /// Downscales [file] in place if it's larger than [maxImageDimension] on
 /// either edge. Returns the number of bytes saved, or 0 if it was already
@@ -108,7 +184,7 @@ void main() {
   // than one category folder before deciding on final ids.
   final groupsByFolder = <String, Map<String, List<MapEntry<int, File>>>>{};
   final folderCategory = <String, String>{};
-  final definitionsByFolder = <String, Map<String, String>>{};
+  final definitionsByFolder = <String, Map<String, ParsedDefinition>>{};
 
   for (final folder in imagesRoot.listSync().whereType<Directory>()) {
     final folderName = folder.uri.pathSegments.where((s) => s.isNotEmpty).last;
@@ -120,14 +196,14 @@ void main() {
     folderCategory[folderName] = category;
 
     final groups = <String, List<MapEntry<int, File>>>{};
-    final definitions = <String, String>{};
+    final definitions = <String, ParsedDefinition>{};
     for (final file in folder.listSync().whereType<File>()) {
       final name = file.uri.pathSegments.last;
 
       if (name.toLowerCase().endsWith('_definition.txt')) {
         final baseId = name.substring(0, name.length - '_definition.txt'.length);
-        final text = file.readAsStringSync().trim();
-        if (text.isNotEmpty) definitions[baseId] = text;
+        final parsed = parseDefinitionFile(file.readAsStringSync());
+        if (parsed != null) definitions[baseId] = parsed;
         continue;
       }
 
@@ -165,7 +241,8 @@ void main() {
     }
   }
   final disambiguated = <String>[];
-  var definitionsApplied = 0;
+  var descriptionsApplied = 0;
+  var sentencesApplied = 0;
 
   for (final folderEntry in groupsByFolder.entries) {
     final folderName = folderEntry.key;
@@ -182,29 +259,36 @@ void main() {
           .map((e) => 'assets/images/$folderName/${e.value.uri.pathSegments.last}')
           .toList();
       final definition = definitionsByFolder[folderName]?[baseId];
+      final hasDescription = definition != null && definition.description.isNotEmpty;
+      final hasSentences = definition != null && definition.sentences.isNotEmpty;
 
       final existing = entriesById[id];
       if (existing != null) {
         existing['category'] = category;
         existing['images'] = imagePaths;
-        if (definition != null) {
-          existing['description'] = definition;
-          definitionsApplied++;
+        if (hasDescription) {
+          existing['description'] = definition.description;
+          descriptionsApplied++;
+        }
+        if (hasSentences) {
+          existing['sentences'] = definition.sentences;
+          sentencesApplied++;
         }
         updated++;
       } else {
         final word = baseId
             .replaceAll('_', ' ')
             .replaceFirstMapped(RegExp('^.'), (m) => m.group(0)!.toUpperCase());
-        if (definition != null) definitionsApplied++;
+        if (hasDescription) descriptionsApplied++;
+        if (hasSentences) sentencesApplied++;
         entriesById[id] = {
           'id': id,
           'word': word,
           'category': category,
-          'description': definition ?? '',
+          'description': hasDescription ? definition.description : '',
           'images': imagePaths,
           'video': null,
-          'sentences': <String>[],
+          'sentences': hasSentences ? definition.sentences : <String>[],
         };
         created++;
       }
@@ -225,8 +309,9 @@ void main() {
   wordsFile.writeAsStringSync('${encoder.convert(json)}\n');
 
   stdout.writeln('Sync complete: $created new entries, $updated updated.');
-  if (definitionsApplied > 0) {
-    stdout.writeln('Applied $definitionsApplied description(s) from *_definition.txt files.');
+  if (descriptionsApplied > 0 || sentencesApplied > 0) {
+    stdout.writeln(
+        'From *_definition.txt files: $descriptionsApplied description(s), $sentencesApplied sentence list(s) applied.');
   }
   if (resizedCount > 0) {
     final savedMb = (bytesSaved / (1024 * 1024)).toStringAsFixed(1);
