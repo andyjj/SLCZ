@@ -44,6 +44,13 @@ need to hand-edit it. Instead:
    step sequence, and deriving the word's display name from the file name.
    It never deletes anything, and never overwrites a description or example
    sentences you've already written by hand.
+
+   It also downscales and re-compresses any image over 1600px on its
+   longest edge (a common size straight off a phone camera), so photos stay
+   phone-friendly without you needing to resize them yourself. This
+   overwrites the file in place — keep your own full-resolution originals
+   somewhere else if you want to preserve them, since this step is lossy
+   and one-way. Images already at or under 1600px are left untouched.
 3. The script prints which entries still need a description and example
    sentence(s) — open `words.json` and fill those two fields in for each
    one it lists (`"description"` and `"sentences"`).

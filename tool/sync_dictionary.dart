@@ -12,9 +12,19 @@
 // description, and sentences are left untouched. New entries are created
 // with an empty description/sentences for a human to fill in afterward.
 // Nothing is ever deleted automatically.
+//
+// Any image wider or taller than maxImageDimension is also downscaled and
+// re-compressed in place, so photos straight off a phone camera don't bloat
+// the app. This overwrites the file — keep your own full-resolution copies
+// elsewhere if you want to preserve the originals.
 
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:image/image.dart' as img;
+
+const int maxImageDimension = 1600;
+const int jpegQuality = 85;
 
 const Map<String, String> categoryByFolder = {
   'greetings': 'Greetings',
@@ -44,6 +54,27 @@ const Map<String, String> categoryByFolder = {
 
 const List<String> imageExtensions = ['.jpg', '.jpeg', '.png'];
 
+/// Downscales [file] in place if it's larger than [maxImageDimension] on
+/// either edge. Returns the number of bytes saved, or 0 if it was already
+/// small enough to leave untouched.
+int resizeIfNeeded(File file, String ext) {
+  final originalBytes = file.readAsBytesSync();
+  final decoded = img.decodeImage(originalBytes);
+  if (decoded == null) return 0; // not a readable image; leave it alone
+
+  if (decoded.width <= maxImageDimension && decoded.height <= maxImageDimension) {
+    return 0;
+  }
+
+  final resized = decoded.width >= decoded.height
+      ? img.copyResize(decoded, width: maxImageDimension)
+      : img.copyResize(decoded, height: maxImageDimension);
+
+  final encoded = ext == '.png' ? img.encodePng(resized) : img.encodeJpg(resized, quality: jpegQuality);
+  file.writeAsBytesSync(encoded);
+  return originalBytes.length - encoded.length;
+}
+
 void main() {
   final imagesRoot = Directory('assets/images');
   final wordsFile = File('assets/data/words.json');
@@ -61,6 +92,8 @@ void main() {
 
   var created = 0;
   var updated = 0;
+  var resizedCount = 0;
+  var bytesSaved = 0;
   final unknownFolders = <String>[];
 
   // First pass: group image files per folder by sign id (stripping a
@@ -86,6 +119,12 @@ void main() {
       if (dot == -1) continue;
       final ext = name.substring(dot).toLowerCase();
       if (!imageExtensions.contains(ext)) continue;
+
+      final saved = resizeIfNeeded(file, ext);
+      if (saved > 0) {
+        resizedCount++;
+        bytesSaved += saved;
+      }
 
       final base = name.substring(0, dot);
       final match = RegExp(r'^(.*)_(\d+)$').firstMatch(base);
@@ -162,6 +201,11 @@ void main() {
   wordsFile.writeAsStringSync('${encoder.convert(json)}\n');
 
   stdout.writeln('Sync complete: $created new entries, $updated updated.');
+  if (resizedCount > 0) {
+    final savedMb = (bytesSaved / (1024 * 1024)).toStringAsFixed(1);
+    stdout.writeln(
+        'Resized $resizedCount image(s) down to a max of ${maxImageDimension}px (saved ${savedMb}MB).');
+  }
   if (disambiguated.isNotEmpty) {
     stdout.writeln(
         'Note: these ids collided across categories and were auto-prefixed with their folder name:\n  ${disambiguated.join('\n  ')}');
