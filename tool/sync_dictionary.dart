@@ -8,10 +8,16 @@
 //   thank_you.jpg              -> one image
 //   thank_you_1.jpg, _2.jpg    -> a step sequence, shown in order
 //
-// Existing entries are updated (category + image list) but their word,
-// description, and sentences are left untouched. New entries are created
-// with an empty description/sentences for a human to fill in afterward.
-// Nothing is ever deleted automatically.
+// Optionally, drop a thank_you_definition.txt file next to the images (same
+// folder) with an English description of how to perform the sign — its
+// contents become that entry's "description". If no such file exists, the
+// description is left blank for a human to fill in later (or untouched, if
+// one was already written by hand directly in words.json).
+//
+// Existing entries are updated (category + image list) but their word and
+// sentences are left untouched. New entries are created with an empty
+// description/sentences for a human to fill in afterward. Nothing is ever
+// deleted automatically.
 //
 // Any image wider or taller than maxImageDimension is also downscaled and
 // re-compressed in place, so photos straight off a phone camera don't bloat
@@ -102,6 +108,7 @@ void main() {
   // than one category folder before deciding on final ids.
   final groupsByFolder = <String, Map<String, List<MapEntry<int, File>>>>{};
   final folderCategory = <String, String>{};
+  final definitionsByFolder = <String, Map<String, String>>{};
 
   for (final folder in imagesRoot.listSync().whereType<Directory>()) {
     final folderName = folder.uri.pathSegments.where((s) => s.isNotEmpty).last;
@@ -113,8 +120,17 @@ void main() {
     folderCategory[folderName] = category;
 
     final groups = <String, List<MapEntry<int, File>>>{};
+    final definitions = <String, String>{};
     for (final file in folder.listSync().whereType<File>()) {
       final name = file.uri.pathSegments.last;
+
+      if (name.toLowerCase().endsWith('_definition.txt')) {
+        final baseId = name.substring(0, name.length - '_definition.txt'.length);
+        final text = file.readAsStringSync().trim();
+        if (text.isNotEmpty) definitions[baseId] = text;
+        continue;
+      }
+
       final dot = name.lastIndexOf('.');
       if (dot == -1) continue;
       final ext = name.substring(dot).toLowerCase();
@@ -134,6 +150,7 @@ void main() {
       groups.putIfAbsent(baseId, () => []).add(MapEntry(step, file));
     }
     groupsByFolder[folderName] = groups;
+    definitionsByFolder[folderName] = definitions;
   }
 
   // A base id that shows up in more than one category folder would silently
@@ -148,6 +165,7 @@ void main() {
     }
   }
   final disambiguated = <String>[];
+  var definitionsApplied = 0;
 
   for (final folderEntry in groupsByFolder.entries) {
     final folderName = folderEntry.key;
@@ -163,21 +181,27 @@ void main() {
       final imagePaths = images
           .map((e) => 'assets/images/$folderName/${e.value.uri.pathSegments.last}')
           .toList();
+      final definition = definitionsByFolder[folderName]?[baseId];
 
       final existing = entriesById[id];
       if (existing != null) {
         existing['category'] = category;
         existing['images'] = imagePaths;
+        if (definition != null) {
+          existing['description'] = definition;
+          definitionsApplied++;
+        }
         updated++;
       } else {
         final word = baseId
             .replaceAll('_', ' ')
             .replaceFirstMapped(RegExp('^.'), (m) => m.group(0)!.toUpperCase());
+        if (definition != null) definitionsApplied++;
         entriesById[id] = {
           'id': id,
           'word': word,
           'category': category,
-          'description': '',
+          'description': definition ?? '',
           'images': imagePaths,
           'video': null,
           'sentences': <String>[],
@@ -201,6 +225,9 @@ void main() {
   wordsFile.writeAsStringSync('${encoder.convert(json)}\n');
 
   stdout.writeln('Sync complete: $created new entries, $updated updated.');
+  if (definitionsApplied > 0) {
+    stdout.writeln('Applied $definitionsApplied description(s) from *_definition.txt files.');
+  }
   if (resizedCount > 0) {
     final savedMb = (bytesSaved / (1024 * 1024)).toStringAsFixed(1);
     stdout.writeln(

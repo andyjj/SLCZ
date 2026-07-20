@@ -35,6 +35,11 @@ need to hand-edit it. Instead:
    - For a multi-step sign, number the images: `thank_you_1.jpg`,
      `thank_you_2.jpg`, `thank_you_3.jpg` — they'll show in that order as a
      swipeable sequence. A single un-numbered image (`smile.jpg`) is also fine.
+   - Optionally, add a `thank_you_definition.txt` file in the same folder
+     with an English description of how to perform the sign. Its contents
+     become that entry's description — no JSON editing needed. If it's
+     missing, the description is left as-is (blank for a new entry, or
+     whatever was already there if you'd written one by hand).
 2. Run the sync script from the project root:
    ```
    dart run tool/sync_dictionary.dart
