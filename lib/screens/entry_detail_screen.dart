@@ -3,6 +3,7 @@ import '../data/auth_repository.dart';
 import '../data/favorites_repository.dart';
 import '../models/dictionary_entry.dart';
 import '../widgets/feedback_section.dart';
+import 'fullscreen_image_viewer.dart';
 
 class EntryDetailScreen extends StatelessWidget {
   final DictionaryEntry entry;
@@ -29,8 +30,12 @@ class EntryDetailScreen extends StatelessWidget {
             builder: (context, _) {
               final isFavorite = favoritesRepository.isFavorite(entry.id);
               return IconButton(
-                icon: Icon(isFavorite ? Icons.star_rounded : Icons.star_border_rounded),
-                tooltip: isFavorite ? 'Remove from My Learning List' : 'Add to My Learning List',
+                icon: Icon(isFavorite
+                    ? Icons.star_rounded
+                    : Icons.star_border_rounded),
+                tooltip: isFavorite
+                    ? 'Remove from My Learning List'
+                    : 'Add to My Learning List',
                 onPressed: () => favoritesRepository.toggle(entry.id),
               );
             },
@@ -43,10 +48,12 @@ class EntryDetailScreen extends StatelessWidget {
           Text(
             entry.word,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 30),
+            style: Theme.of(context)
+                .textTheme
+                .headlineLarge
+                ?.copyWith(fontSize: 30),
           ),
           const SizedBox(height: 24),
-
           if (entry.description.isNotEmpty) ...[
             _SectionHeader(title: 'Sign Description', color: navy),
             const SizedBox(height: 12),
@@ -56,7 +63,6 @@ class EntryDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
           ],
-
           if (entry.images.isNotEmpty) ...[
             _SectionHeader(title: 'Visual Support', color: navy),
             const SizedBox(height: 12),
@@ -65,7 +71,6 @@ class EntryDetailScreen extends StatelessWidget {
             _ImageStepSequence(images: entry.images),
             const SizedBox(height: 24),
           ],
-
           if (entry.sentences.isNotEmpty) ...[
             _SectionHeader(title: 'Potential Sentences', color: navy),
             const SizedBox(height: 12),
@@ -80,7 +85,6 @@ class EntryDetailScreen extends StatelessWidget {
                 ),
             const SizedBox(height: 24),
           ],
-
           ListenableBuilder(
             listenable: authRepository,
             builder: (context, _) => authRepository.isSignedIn
@@ -155,13 +159,26 @@ class _ImageStepSequenceState extends State<_ImageStepSequence> {
               itemCount: widget.images.length,
               onPageChanged: (i) => setState(() => _currentPage = i),
               itemBuilder: (context, index) {
-                return Image.asset(
-                  widget.images[index],
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    color: Colors.grey.shade200,
-                    child: const Center(
-                      child: Icon(Icons.image_not_supported_outlined, size: 48),
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => FullscreenImageViewer(
+                          images: widget.images,
+                          initialIndex: index,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    widget.images[index],
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      color: Colors.grey.shade200,
+                      child: const Center(
+                        child:
+                            Icon(Icons.image_not_supported_outlined, size: 48),
+                      ),
                     ),
                   ),
                 );
@@ -186,14 +203,15 @@ class _ImageStepSequenceState extends State<_ImageStepSequence> {
               ),
             ),
           ),
-        if (widget.images.length > 1)
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: Text(
-              'Step ${_currentPage + 1} of ${widget.images.length} — swipe to see the next step',
-              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
-            ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(
+            widget.images.length > 1
+                ? 'Step ${_currentPage + 1} of ${widget.images.length} — swipe to see the next step, tap to enlarge'
+                : 'Tap the image to enlarge',
+            style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
           ),
+        ),
       ],
     );
   }
