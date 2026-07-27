@@ -26,6 +26,19 @@
   ],
   "entries": [
     {
+      "id": "good",
+      "word": "Good",
+      "category": "Greetings",
+      "description": "Of a high quality or pleasing",
+      "images": [
+        "assets/images/greetings/good.gif"
+      ],
+      "video": null,
+      "sentences": [
+        "I am a good cook (Me cook good)"
+      ]
+    },
+    {
       "id": "how_are_you",
       "word": "How are you",
       "category": "Greetings",
@@ -39,6 +52,39 @@
       "sentences": [
         "Hello how are you?"
       ]
+    },
+    {
+      "id": "no",
+      "word": "No",
+      "category": "Greetings",
+      "description": "A word used to show disagreement or to give a negative answer",
+      "images": [
+        "assets/images/greetings/no.gif"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "not_fine",
+      "word": "Not fine",
+      "category": "Greetings",
+      "description": "Literally signed \"fine little\"",
+      "images": [
+        "assets/images/greetings/not_fine.gif"
+      ],
+      "video": null,
+      "sentences": []
+    },
+    {
+      "id": "thank_you",
+      "word": "Thank you",
+      "category": "Greetings",
+      "description": "Words used to tell someone you are grateful for something they have done\t\n\nSign Variation\nCan be signed with one hand or two.",
+      "images": [
+        "assets/images/greetings/thank_you.gif"
+      ],
+      "video": null,
+      "sentences": []
     },
     {
       "id": "bless",
