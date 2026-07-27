@@ -117,6 +117,7 @@ class WelcomeScreen extends StatelessWidget {
                         builder: (_) => FavoritesScreen(
                           repository: repository,
                           favoritesRepository: favoritesRepository,
+                          authRepository: authRepository,
                         ),
                       ),
                     );

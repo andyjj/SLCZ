@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../data/auth_repository.dart';
 import '../data/dictionary_repository.dart';
 import '../data/favorites_repository.dart';
 import 'entry_detail_screen.dart';
@@ -6,11 +7,13 @@ import 'entry_detail_screen.dart';
 class FavoritesScreen extends StatelessWidget {
   final DictionaryRepository repository;
   final FavoritesRepository favoritesRepository;
+  final AuthRepository authRepository;
 
   const FavoritesScreen({
     super.key,
     required this.repository,
     required this.favoritesRepository,
+    required this.authRepository,
   });
 
   @override
@@ -75,6 +78,7 @@ class FavoritesScreen extends StatelessWidget {
                         builder: (_) => EntryDetailScreen(
                           entry: entry,
                           favoritesRepository: favoritesRepository,
+                          authRepository: authRepository,
                         ),
                       ),
                     );

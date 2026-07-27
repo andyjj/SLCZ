@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import '../data/auth_repository.dart';
 import '../data/favorites_repository.dart';
 import '../models/dictionary_entry.dart';
+import '../widgets/feedback_section.dart';
 
 class EntryDetailScreen extends StatelessWidget {
   final DictionaryEntry entry;
   final FavoritesRepository favoritesRepository;
+  final AuthRepository authRepository;
 
   const EntryDetailScreen({
     super.key,
     required this.entry,
     required this.favoritesRepository,
+    required this.authRepository,
   });
 
   @override
@@ -74,7 +78,15 @@ class EntryDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+            const SizedBox(height: 24),
           ],
+
+          ListenableBuilder(
+            listenable: authRepository,
+            builder: (context, _) => authRepository.isSignedIn
+                ? FeedbackSection(entry: entry, userEmail: authRepository.email)
+                : const SizedBox.shrink(),
+          ),
         ],
       ),
     );

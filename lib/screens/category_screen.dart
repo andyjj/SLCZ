@@ -126,6 +126,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 builder: (_) => EntryDetailScreen(
                   entry: entry,
                   favoritesRepository: widget.favoritesRepository,
+                  authRepository: widget.authRepository,
                 ),
               ),
             );
@@ -159,6 +160,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 builder: (_) => EntryListScreen(
                   repository: widget.repository,
                   favoritesRepository: widget.favoritesRepository,
+                  authRepository: widget.authRepository,
                   category: category,
                 ),
               ),
