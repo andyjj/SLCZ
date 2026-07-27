@@ -34,10 +34,13 @@
 // description/sentences for a human to fill in afterward. Nothing is ever
 // deleted automatically.
 //
-// Any image wider or taller than maxImageDimension is also downscaled and
+// Any jpg/png wider or taller than maxImageDimension is also downscaled and
 // re-compressed in place, so photos straight off a phone camera don't bloat
 // the app. This overwrites the file — keep your own full-resolution copies
-// elsewhere if you want to preserve the originals.
+// elsewhere if you want to preserve the originals. GIFs are recognized as
+// images too (handy for showing motion) but are never resized, so an
+// animated GIF doesn't get collapsed down to a single still frame — keep
+// their file size reasonable yourself before adding them.
 
 import 'dart:convert';
 import 'dart:io';
@@ -73,7 +76,11 @@ const Map<String, String> categoryByFolder = {
   'prepositions': 'Prepositions',
 };
 
-const List<String> imageExtensions = ['.jpg', '.jpeg', '.png'];
+const List<String> imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+// GIFs are never resized (see resizeIfNeeded) since a naive decode/re-encode
+// would collapse an animated GIF down to a single still frame.
+const List<String> resizableExtensions = ['.jpg', '.jpeg', '.png'];
 
 const List<String> knownDefinitionHeaders = [
   'Definition',
@@ -138,8 +145,11 @@ ParsedDefinition? parseDefinitionFile(String rawText) {
 
 /// Downscales [file] in place if it's larger than [maxImageDimension] on
 /// either edge. Returns the number of bytes saved, or 0 if it was already
-/// small enough to leave untouched.
+/// small enough to leave untouched (or isn't a resizable format — GIFs are
+/// skipped entirely so animated ones don't get collapsed to a still frame).
 int resizeIfNeeded(File file, String ext) {
+  if (!resizableExtensions.contains(ext)) return 0;
+
   final originalBytes = file.readAsBytesSync();
   final decoded = img.decodeImage(originalBytes);
   if (decoded == null) return 0; // not a readable image; leave it alone

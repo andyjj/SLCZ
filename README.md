@@ -28,13 +28,18 @@ bundled inside the app at build time — nothing is downloaded at runtime.
 All dictionary content lives in **`assets/data/words.json`**, but you don't
 need to hand-edit it. Instead:
 
-1. Add your image(s) to `assets/images/<category_folder>/`.
+1. Add your image(s) to `assets/images/<category_folder>/`. `.jpg`, `.png`,
+   and `.gif` are all supported.
    - Use lowercase, underscore-separated file names matching the word,
      e.g. `thank_you.jpg`.
    - Recommended: 3:4 or 4:3 aspect ratio photos, good lighting, plain background.
    - For a multi-step sign, number the images: `thank_you_1.jpg`,
      `thank_you_2.jpg`, `thank_you_3.jpg` — they'll show in that order as a
      swipeable sequence. A single un-numbered image (`smile.jpg`) is also fine.
+   - An animated `.gif` works well for signs where the motion is hard to
+     capture in stills — just keep its file size reasonable yourself, since
+     (unlike jpg/png) GIFs are never auto-resized, to avoid collapsing the
+     animation down to a single still frame.
    - Optionally, add a `thank_you_definition.txt` file in the same folder.
      Plain text becomes the entry's description as-is, or you can use this
      template with recognized section headers on their own line:
@@ -64,12 +69,13 @@ need to hand-edit it. Instead:
    It never deletes anything, and never overwrites a description or example
    sentences you've already written by hand.
 
-   It also downscales and re-compresses any image over 1600px on its
+   It also downscales and re-compresses any jpg/png over 1600px on its
    longest edge (a common size straight off a phone camera), so photos stay
    phone-friendly without you needing to resize them yourself. This
    overwrites the file in place — keep your own full-resolution originals
    somewhere else if you want to preserve them, since this step is lossy
-   and one-way. Images already at or under 1600px are left untouched.
+   and one-way. Images already at or under 1600px are left untouched, and
+   GIFs are never touched by this step (see above).
 3. The script prints which entries still need a description and example
    sentence(s) — open `words.json` and fill those two fields in for each
    one it lists (`"description"` and `"sentences"`).
