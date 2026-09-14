@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'data/auth_repository.dart';
 import 'data/dictionary_repository.dart';
 import 'data/favorites_repository.dart';
+import 'data/submission_repository.dart';
 import 'screens/welcome_screen.dart';
 
 void main() async {
@@ -17,12 +18,14 @@ class ZambiaSignHubApp extends StatelessWidget {
   final DictionaryRepository? repositoryOverride;
   final FavoritesRepository? favoritesRepositoryOverride;
   final AuthRepository? authRepositoryOverride;
+  final SubmissionRepository? submissionRepositoryOverride;
 
   const ZambiaSignHubApp({
     super.key,
     this.repositoryOverride,
     this.favoritesRepositoryOverride,
     this.authRepositoryOverride,
+    this.submissionRepositoryOverride,
   });
 
   @override
@@ -32,6 +35,7 @@ class ZambiaSignHubApp extends StatelessWidget {
     final repository = repositoryOverride ?? DictionaryRepository();
     final favoritesRepository = favoritesRepositoryOverride ?? (FavoritesRepository()..load());
     final authRepository = authRepositoryOverride ?? AuthRepository();
+    final submissionRepository = submissionRepositoryOverride ?? SubmissionRepository();
 
     const navy = Color(0xFF1E3A5C);
 
@@ -75,6 +79,7 @@ class ZambiaSignHubApp extends StatelessWidget {
         repository: repository,
         favoritesRepository: favoritesRepository,
         authRepository: authRepository,
+        submissionRepository: submissionRepository,
       ),
     );
   }

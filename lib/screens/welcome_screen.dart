@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../data/auth_repository.dart';
 import '../data/dictionary_repository.dart';
 import '../data/favorites_repository.dart';
+import '../data/submission_repository.dart';
+import 'admin_upload_screen.dart';
 import 'auth_screen.dart';
 import 'category_screen.dart';
 import 'favorites_screen.dart';
@@ -11,12 +13,14 @@ class WelcomeScreen extends StatelessWidget {
   final DictionaryRepository repository;
   final FavoritesRepository favoritesRepository;
   final AuthRepository authRepository;
+  final SubmissionRepository submissionRepository;
 
   const WelcomeScreen({
     super.key,
     required this.repository,
     required this.favoritesRepository,
     required this.authRepository,
+    required this.submissionRepository,
   });
 
   Future<void> _confirmSignOut(BuildContext context) async {
@@ -161,6 +165,33 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       );
                     },
+                  );
+                },
+              ),
+              ListenableBuilder(
+                listenable: authRepository,
+                builder: (context, _) {
+                  if (!authRepository.isAdmin) return const SizedBox.shrink();
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: TextButton.icon(
+                      icon: const Icon(Icons.admin_panel_settings_outlined, size: 18),
+                      label: const Text('Admin — Submit a Sign'),
+                      onPressed: () async {
+                        await repository.load();
+                        if (context.mounted) {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => AdminUploadScreen(
+                                repository: repository,
+                                submissionRepository: submissionRepository,
+                                adminEmail: authRepository.email ?? 'unknown',
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                   );
                 },
               ),

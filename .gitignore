@@ -33,3 +33,8 @@ ios/Flutter/Flutter.podspec
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Admin tooling - service account key is a sensitive credential, never commit
+tool/admin/serviceAccountKey.json
+tool/admin/node_modules/
+tool/admin/package-lock.json

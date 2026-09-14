@@ -1,0 +1,8 @@
+{
+  "name": "slcz-admin-tools",
+  "private": true,
+  "description": "Local-only admin scripts for SLCZ (grant admin claims, process sign submissions). Never deployed.",
+  "dependencies": {
+    "firebase-admin": "^12.7.0"
+  }
+}
